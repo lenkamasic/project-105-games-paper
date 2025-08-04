@@ -1,0 +1,88 @@
+---
+title: "Gameshubgato365 TheWurdz - Writeup"
+format: html
+editor: visual
+---
+
+
+## Introduction -  
+
+We have created a Wordle web application from scratch that allows users to register and create profiles, play different modes and levels of games, and track their own progress and improvement. This web application, while intended to be interactive and entertaining for the user, ultimately was created as an educational tool for statistics. The ideal outcomes are an interactive game that has a clean user interface and mimics the familiarity of the well-known Wordle game. In terms of learning outcomes for this educational tool, this web app aims to store user data on their games, guesses, and improvements. This data can then also be accessed by the users to perform statistical analyses in classrooms, deepening students understanding of data collection and key statistical approaches to data science. 
+
+## Methods - 
+
+The method used for this Wordle web application was a Python Django Stack, lending a manageable frontend and backend development. The backend is python with Django, implementing views, models, routing, and templates while the frontend employs HTML, CSS, and JavaScript for rendering and game interaction. Finally, the database is SQLite, Django’s default database which is lightweight an file-based. 
+
+ 
+
+ In this web-app, the views serve as a controller layer which link database logic to the user interface. Examples of views functions we have specified are _____ 
+
+ 
+
+Additionally, our project includes many key models with attributes. Game, for example, includes attributes id, date, solution_word, and game_type, Guess includes id, game, user, guess_word, guess_time, and UserGame links users to specific games. Ultimately, these models support daily Wordle game play, guess validation, and user stats tracking. 
+
+ 
+
+The rules of the game are very simple, similar to NY Times Wordle game. Players have six guesses to try and guess a five-letter word. After each guess, letters in the correct position are marked green, letters that are present in the word but not in the correct position are marked yellow, and incorrect letters are marked as gray. Ultimately, the goal is to correctly guess the word (all letters marked green) in six guesses. 
+
+ 
+
+The frontend structure of our wordle game employs HTMLand CSS. Using HTML, we are able to implement a game grid and result display into our game. CSS, on the other hand, is used for styling such as color and font choice of the web-apps frontend elements. Finally, JavaScript is used for capturing on-screen input, sending guesses via AJAX to Django backend, and updating the grid in real time. This setup ultimately keeps the user interface simple, easy to grasp, and interactive. 
+
+ 
+
+[INSERT SEQUENCE DIAGRAMS] 
+
+ 
+
+This web application employs URLs to route HTTP requests to the right Django views. 
+
+ 
+
+## Data Usage 
+
+ 
+
+TheWurdz stores daily games and word lists to keep the gameplay unique everyday. Each guess a user makes during gameplay is recorded and stored in the database for user analytics and feedback. Storing such data enables users to track stats such as win rates, streaks, and average guess count, insights that improve engagement and offer players feedback.  
+
+ 
+
+Given the abundance of data that is stored with this game, there are many applications for in-classroom activities and assignments that can further students understanding of statistical concepts and analyses.  
+
+ 
+
+[INSERT HERE] 
+
+ 
+
+In this project, the Wordle game offers a rich framework for exploring a variety of statistical and probabilistic concepts. For instance, students can apply the Binomial distribution to model the chance of randomly guessing a correct letter in a five-letter word, while the Hypergeometric distribution can be used to find the probability of selecting correct letter positions without replacement. Rare events, like solving a particularly difficult word in two or fewer guesses, naturally connect to the Poisson distribution, giving students a practical scenario for discussing low-frequency events. 
+
+Conditional probability is another natural extension: students can calculate probabilities such as the likelihood of correctly solving the puzzle on the third attempt given, they had two green letters on their second try, or the probability that a guess is valid given that a certain letter is known to appear in the word. These types of conditional events mirror real Wordle strategy and help students see the connection between abstract probability rules and practical decision-making. 
+
+Additionally, students can design and run simulations to test different guessing strategies. For example, they might simulate 10,000 games for a random guessing approach versus a more systematic strategy that uses letter frequency. By comparing the distributions of the number of guesses required to solve the word under each strategy, students practice estimating empirical means, medians, and standard deviations, and visualizing these distributions with histograms. 
+
+To deepen experimental design skills, students can conduct a randomized controlled experiment where participants are randomly assigned to words of varying difficulty levels or given additional factors like hints. Outcomes such as the number of guesses or time to solve can then be compared across groups. A randomized block design might control for variation in player ability by grouping students based on prior Wordle experience or major (e.g., STEM vs. non-STEM). This reduces unexplained variation and reinforces the practical value of blocking in experiments. 
+
+On the data science side, students can use R’s dplyr/tidyverse tools to create derived variables, such as average time by difficulty or the accuracy of first-letter guesses. Reshaping tools like pivot_longer or pivot_wider help structure guess data for analysis, and metadata like word difficulty can be merged for deeper insights. If the activity is repeated daily, students can collect time series data, tracking variables like time to solve, number of guesses, hint usage, and word difficulty over multiple rounds. Analyzing this longitudinal data allows students to identify trends, such as improvement in speed or strategy over time. 
+
+Finally, sampling methods and combinatorial analysis connect the game back to core statistical ideas. Students can treat their Wordle data as a sample from a larger population of players, applying simple random sampling, stratified sampling by skill level, or cluster sampling by class section to estimate player performance more broadly. Combinatorial questions, such as counting the number of valid five-letter words with specific features (like a set number of vowels or starting letters) or calculating the total possible green/yellow/gray feedback patterns for a guess, further reinforce counting techniques and permutations. Altogether, the Wordle framework makes an engaging, hands-on context for tying together probability, sampling, experiment design, simulation, and data analysis in a single, relatable project. 
+
+## Conclusion 
+
+ 
+
+While the aim of this Wordle web application is to be an easy and accessible statistical education tool, it is important to specify some of the data privacy that is built into the project.  
+
+ 
+
+Finally, creating this web application required extensive effort, work, and testing to ensure that all components work properly. Creating it expanded knowledge on Django’s MVC pattern and how it organizes large projects, how to properly separate Django’s frontend and backend interactivity and logic, and database design. Additionally, to make the project design efficient and easy to use, it was important to implement reusable views and templates through template inheritance, build interactive UIs with minimal backend load via AJAX, and above all, document APIs and architecture diagrams for teamwork.  
+
+ 
+
+Notes  
+
+Make conclusion broad 
+
+ 
+
+ 
